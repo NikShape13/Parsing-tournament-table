@@ -31,8 +31,8 @@ params = {
 }
 
 
-with open('adress.txt') as f:
-    adress_list = f.read().splitlines()
+with open('address.txt') as f:
+    address_list = f.read().splitlines()
 
 
 for i in range(1, 1033):
@@ -43,11 +43,11 @@ for i in range(1, 1033):
     dicts = r.json()['data']
 
     for i in dicts:
-        if i['address'] in adress_list:
+        if i['address'] in address_list:
             with open('fin.json', 'a')as f:
                 json.dump(i, f, indent=4)
 
-            if i['address'] == adress_list[-1]:
+            if i['address'] == address_list[-1]:
                 print('Done')
 
     params['page'] = str(int(params['page']) + 1)
