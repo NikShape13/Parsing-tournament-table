@@ -1,7 +1,6 @@
 import requests
 import json
 from fake_useragent import UserAgent as US
-from bs4 import BeautifulSoup as BS
 
 
 user_agent = US().random
